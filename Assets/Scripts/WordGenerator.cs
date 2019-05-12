@@ -7,7 +7,7 @@ public class WordGenerator : MonoBehaviour
 
     //Note: Make sure te words don't have any whitespaces on them
 
-  private static string[] wordList = { "chuchuruchu", "chuchuruchuuuu", "nananaaa", "Você", "vai", "sentar", "por", "cima", "E", "o", "DJ", "vai", "te", "pegar",
+  private static string[] wordList = { "Você", "vai", "sentar", "por", "cima", "E", "o", "DJ", "vai", "te", "pegar",
         "Tu", "pediu", "agora", "toma", "Não", "adianta", "tu", "voltar", "Menina", "Agora", "você", "vai", "sentar",
         "Dou", "tapinha", "na", "potranca", "Com", "o", "bumbum", "ela", "balança", "Se", "eu", "te", "chamo", "de",
         "malandra", "Você", "vai", "se", "apaixonar", "Dou", "tapinha", "na", "potranca", "Com", "o", "bumbum", "ela", "balança",
@@ -33,7 +33,7 @@ public class WordGenerator : MonoBehaviour
     {
         //int randomIndex = Random.Range(0, wordList.Length);
 
-        string randomWord;
+        string randomWord;//The variable name is wrong, potranca. You should change that, novinha.
 
         if (index == wordList.Length)
         {

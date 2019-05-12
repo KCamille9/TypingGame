@@ -6,17 +6,26 @@ using UnityEngine;
 public class Word
 {
     public string word;
+    WordDisplay display;
+    public bool isOnScreen;
+
     private int typeIndex;
 
-    WordDisplay display;
-
-    public Word(string _word, WordDisplay _display)
+    public Word(string _word, WordDisplay _display, bool _isOnScreen)
     {
-        word = _word;
         typeIndex = 0;
+
+        word = _word;
 
         display = _display;
         display.SetWord(word);
+
+        isOnScreen = _isOnScreen;
+    }
+
+    public void SetToOnScreen()
+    {
+        this.isOnScreen = true;
     }
 
     public WordDisplay GetWordDisplay()

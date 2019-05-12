@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6223d65c7b2704e48bec25c7f218de3b
+  - enabled: 1
+    path: Assets/Scenes/SongTypeSelection.unity
+    guid: ab908323d686cde409f2073aad2070d9
+  - enabled: 1
+    path: Assets/Scenes/FunkSongs.unity
+    guid: 433960fb7677aa44dbd546c70d6223ab
+  - enabled: 1
+    path: Assets/Scenes/GameScn.unity
+    guid: 9deb69acc89bc3a4d9cc373f95d543fa
+  m_configObjects: {}

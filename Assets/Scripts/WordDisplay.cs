@@ -13,7 +13,7 @@ public class WordDisplay : MonoBehaviour
         text.text = word;
         text.color = Color.magenta;
         //text.verticalOverflow = true;
-        text.fontSize = 25;
+        text.fontSize = 30;
     }
 
     public void RemoveLetter()
@@ -36,7 +36,32 @@ public class WordDisplay : MonoBehaviour
     private void Update()
     {
         transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f); // move word along y axis
-        
 
+        Vector3 bottomLeftScreenPoint = Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f));
+        Vector3 topRightScreenPoint = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
+
+
+        // Create bottom collider
+
+        Vector3 size = new Vector3((bottomLeftScreenPoint.x - topRightScreenPoint.x) / 2f, topRightScreenPoint.y, 0f);
+
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+
+        if (pos.y < 1.0 && pos.y > 0.0)
+        {
+
+            GameObject go = GameObject.Find("WordManager");
+
+            List<Word> list = go.GetComponent<WordManager>().words;
+
+            Word w = go.GetComponent<WordManager>().FindWordInList(this.gameObject.name);
+
+            w.SetToOnScreen();
+
+            //Debug.Log(w);
+
+        }
+
+        //Debug.Log(transform);
     }
 }

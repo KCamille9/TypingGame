@@ -42,9 +42,8 @@ public class WordManager : MonoBehaviour
 
 
 
-        Word word = new Word(funkWord, funkWordDisplay); //creating new word
+        Word word = new Word(funkWord, funkWordDisplay, false); //creating new word
 
-        wordSpawner.SetObjectName(word); //setting word string to newly created gameobject
 
 
         //modyfing new word Speed
@@ -73,6 +72,9 @@ public class WordManager : MonoBehaviour
         //Adding final word to Words list
         word.SetWordString(funkWord); 
         words.Add(word);
+
+        wordSpawner.SetObjectName(word); //setting word string to newly created gameobject
+
     }
 
     public void NormalizeWord(Word portugueseWord)
@@ -124,15 +126,16 @@ public class WordManager : MonoBehaviour
         return foundWord;
     }
 
-    public bool WordInList(List<Word> list, string wordStr)
+    public bool WordInList(string wordStr)
     {
         bool wordInList = false;
 
-        Word wordCheck = FindWordInList(wordStr);
-
-        if(wordCheck != null)
+        foreach (Word word in words)
         {
-            wordInList = true;
+            if (word.GetWordString().Equals(wordStr))
+            {
+                wordInList = true;
+            }
         }
 
         return wordInList;
@@ -144,6 +147,12 @@ public class WordManager : MonoBehaviour
 
         if (hasActiveWord)
         {
+
+            if (!WordInList(activeWord.GetWordString()))
+            {
+                hasActiveWord = false;
+            }
+
             //check if letter was next
             //remove it from the word
             if(activeWord.GetNextLetter() == letter)
@@ -175,6 +184,18 @@ public class WordManager : MonoBehaviour
         {
             if (destroyCount == 5)
             {
+
+                //el isOnscreen esta un poco mas bajo que el camara top y
+                /*foreach(Word w in words)
+                {
+                    if(w.isOnScreen == true)
+                    {
+                        testSpeed += 1;
+                        w.GetWordDisplay().SetFallSpeed(testSpeed);
+                    }
+                  
+                }*/
+
                 testSpeed += 1;
                 destroyCount = 0;
 
@@ -186,39 +207,7 @@ public class WordManager : MonoBehaviour
              hasActiveWord = false;
              words.Remove(activeWord);
              destroyCount++;
-
-
-            // Default folder  
-             string rootFolder = @"D:\Unity Projects\FunkSongs\";
-            //Default file  
-            /* string textFile = @"D:\Unity Projects\FunkSongs\elaquica.txt";
-
-
-            string[] lines = File.ReadAllLines(textFile);
-
-            foreach (string line in lines)
-                Debug.Log(line);*/
-
-
-            /*Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-
-            if (pos.y < 0.0)
-                Debug.Log("I am left of the camera's view.");
-
-
-            Vector2 screenSize;
-
-            Vector3 cameraPos = Camera.main.transform.position;
-            screenSize.x = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0))) * 0.5f; //Grab the world-space position values of the start and end positions of the screen, then calculate the distance between them and store it as half, since we only need half that value for distance away from the camera to the edge
-            screenSize.y = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)), Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height))) * 0.5f;
-
-
-            Debug.Log(screenSize.x);
-
-
-
-
-            Debug.Log(testSpeed);*/
+            ScoreScript.scoreValue += 5;
 
         }
 
