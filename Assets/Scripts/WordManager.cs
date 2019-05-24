@@ -31,8 +31,6 @@ public class WordManager : MonoBehaviour
     }
 
 
-
-
     private int destroyCount;
 
     public void AddWord()
@@ -182,7 +180,7 @@ public class WordManager : MonoBehaviour
 
         if(hasActiveWord && activeWord.WordTyped())
         {
-            if (destroyCount == 5)
+           /* if (destroyCount == 5)
             {
 
                 //el isOnscreen esta un poco mas bajo que el camara top y
@@ -194,7 +192,7 @@ public class WordManager : MonoBehaviour
                         w.GetWordDisplay().SetFallSpeed(testSpeed);
                     }
                   
-                }*/
+                }
 
                 testSpeed += 1;
                 destroyCount = 0;
@@ -202,7 +200,7 @@ public class WordManager : MonoBehaviour
                 //clapping audio
                 musicSource.Play();
 
-            }
+            }*/
 
              hasActiveWord = false;
              words.Remove(activeWord);
