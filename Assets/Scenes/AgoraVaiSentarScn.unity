@@ -755,7 +755,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d5616a5f2194ea4ba240a84566105fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.46
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -968,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.427}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 693, y: -1}
+  m_AnchoredPosition: {x: -409, y: 10}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849972854
@@ -1420,6 +1420,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1038278451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5946016570252582551, guid: 168007a0060e0bd428fc49b7b5a17299,
+    type: 3}
+  m_PrefabInstance: {fileID: 5946016571287094102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1038278459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038278451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70754419b54e5a849b57017d82df3e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  funkSong: {fileID: 4900000, guid: 322babb0866dca441a5741db337f483e, type: 3}
 --- !u!1 &1169508396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.96, y: 2.56}
+  m_AnchoredPosition: {x: 7.58, y: 1.34}
   m_SizeDelta: {x: 273.9, y: 119.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872479791
@@ -2468,6 +2487,11 @@ PrefabInstance:
       propertyPath: endTitle
       value: 
       objectReference: {fileID: 1817539265}
+    - target: {fileID: 5946016570252582544, guid: 168007a0060e0bd428fc49b7b5a17299,
+        type: 3}
+      propertyPath: wordDelay
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5946016570252582545, guid: 168007a0060e0bd428fc49b7b5a17299,
         type: 3}
       propertyPath: m_Volume

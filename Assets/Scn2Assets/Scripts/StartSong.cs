@@ -7,6 +7,12 @@ public class StartSong : MonoBehaviour
 {
     public void StartAgoraVaiSentar()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("AgoraVaiSentarScn");
+    }
+
+    public void StartDeuOnda()
+    {
+        SceneManager.LoadScene("DeuOndaScn");
+
     }
 }

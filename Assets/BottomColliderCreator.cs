@@ -33,7 +33,7 @@ public class BottomColliderCreator : MonoBehaviour
         // Create bottom collider
         BoxCollider2D bottomCollider = bottom.AddComponent<BoxCollider2D>();
         bottomCollider.size = new Vector3(Mathf.Abs(bottomLeftScreenPoint.x - topRightScreenPoint.x), 0.1f, 0f);
-        bottomCollider.offset = new Vector2(bottomCollider.size.x / 2f, bottomCollider.size.y / 2f);
+        bottomCollider.offset = new Vector2(bottomCollider.size.x / 2f, (bottomCollider.size.y / 2f) + 2f);
 
 
         float bottomColliderY = (bottomLeftScreenPoint.y - bottomCollider.size.y) - 1f; //-1.5fmake it a little bit below the screen
